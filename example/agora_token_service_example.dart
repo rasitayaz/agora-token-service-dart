@@ -1,5 +1,4 @@
 import 'package:agora_token_service/agora_token_service.dart';
-import 'package:agora_token_service/src/rtc_role.dart';
 
 void main() {
   final appId = '970CA35de60c44645bbae8a215061b33';
