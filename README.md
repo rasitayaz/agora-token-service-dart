@@ -10,7 +10,7 @@ You can use it in your Dart server to create [Agora WebRTC](https://www.agora.io
 
 ## Usage
 
-Check [example](https://pub.dev/packages/agora_token_service/example) for basic usage.
+See [example](https://pub.dev/packages/agora_token_service/example) for basic usage.
 
 ```dart
 final token = RtcTokenBuilder.build(
@@ -25,4 +25,8 @@ final token = RtcTokenBuilder.build(
 
 ## Contribution
 
-This library is currently only used for token generation, you can [contribute here](https://github.com/rasitayaz/agora-token-service-dart) by implementing other features included in [Agora's official implementation](https://github.com/AgoraIO/Tools).
+This library is currently only used for access token generation, you can [contribute here](https://github.com/rasitayaz/agora-token-service-dart) by implementing other features included in [Agora's official implementation](https://github.com/AgoraIO/Tools).
+
+## Thanks
+
+Thanks to [Rakesh Kumar Verma](https://github.com/kuranja-89) for CRC32 implementation.
