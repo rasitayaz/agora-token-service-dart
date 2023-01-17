@@ -1,39 +1,28 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Agora Token Service for Dart
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+[![pub](https://img.shields.io/pub/v/agora_token_service.svg?style=popout)](https://pub.dartlang.org/packages/agora_token_service)
+[![github](https://img.shields.io/badge/github-rasitayaz-red)](https://github.com/rasitayaz)
+[![buy me a coffee](https://img.shields.io/badge/buy&nbsp;me&nbsp;a&nbsp;coffee-donate-green)](https://www.buymeacoffee.com/RasitAyaz)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+This is an unofficial Dart library for generating [Agora.io](https://www.agora.io/) WebRTC tokens. It is based on Agora's Node.js token service implementation [in this repository](https://github.com/AgoraIO/Tools/tree/master/DynamicKey/AgoraDynamicKey/nodejs).
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+You can use it in your Dart server to create [Agora WebRTC](https://www.agora.io/en/developer/webrtc/) access tokens.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Check [example](https://pub.dev/packages/agora_token_service/example) for basic usage.
 
 ```dart
-const like = 'sample';
+final token = RtcTokenBuilder.build(
+  appId: appId,
+  appCertificate: appCertificate,
+  channelName: channelName,
+  uid: uid,
+  role: role,
+  expireTimestamp: expireTimestamp,
+);
 ```
 
-## Additional information
+## Contribution
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+This library is currently only used for token generation, you can [contribute here](https://github.com/rasitayaz/agora-token-service-dart) by implementing other features included in [Agora's official implementation](https://github.com/AgoraIO/Tools).
