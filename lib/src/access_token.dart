@@ -9,6 +9,7 @@ import 'package:crypto/crypto.dart';
 
 const version = '006';
 
+/// Token required for Agora WebRTC connection.
 class AccessToken {
   AccessToken({
     required this.appId,
@@ -17,19 +18,33 @@ class AccessToken {
     required this.uid,
   });
 
+  /// App ID issued to you by Agora.
   final String appId;
+
+  /// App Certificate issued to you by Agora.
   final String appCertificate;
+
+  /// Name of the Agora Channel you wish to join.
   final String channelName;
+
+  /// User ID of the user joining the Agora Channel.
   final String uid;
+
+  /// Timestamps when the privileges will expire.
   final Map<RtcPrivilege, int> privilegeTimestamps = {};
+
+  /// Salt required to generate a signature.
   final int salt = (Random().nextDouble() * 0xffffffff).floor();
+
+  /// Timestamp when the token will expire.
   final int timestamp = DateTime.now().secondsSinceEpoch + 24 * 3600;
 
+  /// Builds the token with the given properties.
   String build() {
     final message = ByteBuf()
         .putUint32(salt)
         .putUint32(timestamp)
-        .putTreeMapUInt32(privilegeTimestamps.map(
+        .putUint32Map(privilegeTimestamps.map(
           (privilege, timestamp) => MapEntry(privilege.id, timestamp),
         ))
         .pack();

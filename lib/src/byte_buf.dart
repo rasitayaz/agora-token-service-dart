@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:typed_data';
 
 class ByteBuf {
@@ -38,21 +37,7 @@ class ByteBuf {
     return this;
   }
 
-  ByteBuf putString(String str) {
-    putBytes(Uint8List.fromList(utf8.encode(str)));
-    return this;
-  }
-
-  ByteBuf putTreeMap(Map<int, String> map) {
-    putUint16(map.length);
-    map.forEach((key, value) {
-      putUint16(key);
-      putString(value);
-    });
-    return this;
-  }
-
-  ByteBuf putTreeMapUInt32(Map<int, int> map) {
+  ByteBuf putUint32Map(Map<int, int> map) {
     putUint16(map.length);
     map.forEach((key, value) {
       putUint16(key);
