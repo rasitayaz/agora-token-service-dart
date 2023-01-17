@@ -3,8 +3,8 @@ import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:agora_token_service/src/byte_buf.dart';
+import 'package:agora_token_service/src/crc32.dart';
 import 'package:agora_token_service/src/rtc_privilege.dart';
-import 'package:crc32_checksum/crc32_checksum.dart';
 import 'package:crypto/crypto.dart';
 
 const version = '006';
