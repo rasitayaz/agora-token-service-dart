@@ -1,5 +1,5 @@
 name: agora_token_service
-description: Unofficial library for generating Agora.io WebRTC tokens.
+description: Unofficial Dart library for generating Agora.io WebRTC tokens.
 version: 0.1.0
 homepage: https://github.com/rasitayaz/agora-token-service-dart
 repository: https://github.com/rasitayaz/agora-token-service-dart
