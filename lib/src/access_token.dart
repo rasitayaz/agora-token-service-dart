@@ -29,7 +29,7 @@ class AccessToken {
     final message = ByteBuf()
         .putUint32(salt)
         .putUint32(timestamp)
-        .putTreeMapUInt32(privilegeTimestamps.map(
+        .putUint32Map(privilegeTimestamps.map(
           (privilege, timestamp) => MapEntry(privilege.id, timestamp),
         ))
         .pack();
